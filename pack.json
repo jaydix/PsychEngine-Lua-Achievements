@@ -1,0 +1,7 @@
+{
+	"name": "Custom Psych Achievements",
+	"description": "The one thing that the official Psych Engine devs could never do with source code.\nAnd I did it in Lua.",
+	"restart":false,
+	"runsGlobally": true,
+	"color": [170, 0, 255]
+}

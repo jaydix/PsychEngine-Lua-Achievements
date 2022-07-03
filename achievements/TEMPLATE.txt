@@ -1,0 +1,1 @@
+Name|Image/Save Data Tag|Description|Hidden (true/false)

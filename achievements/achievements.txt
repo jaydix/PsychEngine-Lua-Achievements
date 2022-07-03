@@ -1,0 +1,1 @@
+First Steps|steps|Open the Achievements menu.|false

@@ -1,0 +1,15 @@
+She Calls Me Daddy Too|week1_nomiss|FC Week 1.|false
+No More Tricks|week2_nomiss|FC Week 2.|false
+Call Me The Hitman|week3_nomiss|FC Week 3.|false
+Lady Killer|week4_nomiss|FC Week 4.|false
+Missless Christmas|week5_nomiss|FC Week 5.|false
+Highscore!!|week6_nomiss|FC Week 6.|false
+God Effing Dammit!|week7_nomiss|FC Week 7.|false
+What a funkin' disaster!|ur_bad|Get an accuracy of 20%.|false
+Perfectionist|ur_good|PFC a song.|false
+Roadkill Enthusiast|roadkill_enthusiast|Kill 100 Henchmen.|false
+Oversinging much...?|oversinging|Hold a note for 10 seconds.|false
+Hyperactive|hype|Finish a song without going idle.|false
+Just the Two of Us|two_keys|Finish a song whilst only pressing 2 keys.|false
+Toaster Gamer|toastie|Have you tried to run the game on a toaster?|false
+Debugger|debugger|Beat "Test" from the chart editor.|true
