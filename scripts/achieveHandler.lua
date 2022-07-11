@@ -1,3 +1,6 @@
+-- For some reason this functions as both the achievements menu and the achievement backend.
+-- I'm a dumbass.
+
 local achs = {}
 -- local save = {}
 local selected = 1
@@ -11,10 +14,11 @@ local achieveName = '125.76.90.254, see you soon'
 
 local isAwardsSong = false
 
-function onCreate()
+
+function onCreate() -- initalization
     achieveName = getPropertyFromClass('Paths', 'currentModDirectory')
     -- achieveName = 'awards'
-    if (songName:lower() == 'awards') and (achieveName == 'awards') then
+    if (songName:lower() == 'awards') and (achieveName == 'awards') or (achieveName == '') then -- for the menu stuff
         isAwardsSong = true
     end
     -- debugPrint(isAwardsSong)
@@ -23,19 +27,19 @@ function onCreate()
         playMusic(getPropertyFromClass('ClientPrefs', 'pauseMusic'):lower():gsub(" ", "-"))
     end
 
-    addHaxeLibrary("CoolUtil", '')
+    addHaxeLibrary("CoolUtil", '') -- for haxe stuff
     -- debugPrint('added util')
 
     -- luaDebugMode = true
-    initSaveData(saveKey, "8bits-shit")
-
-    local achString = getTextFromFile('achievements/achievements.txt')
-
-    runHaxeCode("var path = 'modsList.txt';")
-
-    setMod(1)
+    initSaveData(saveKey, "8bits-shit") -- SAVE DATA
 
     -- setPropertyFromClass('Paths','currentModDirectory',mod)
+
+    -- the system for pushing new achievements
+    local achString = getTextFromFile('achievements/achievements.txt') 
+    runHaxeCode("var path = 'modsList.txt';")
+    setMod(1)
+
     local modAchievements = getTextFromFile('achievements/' .. modAchievementFile)
     if (modAchievements ~= achString) then
         if (checkFileExists('achievements/' .. modAchievementFile)) then
@@ -52,6 +56,8 @@ function onCreate()
     end
     achs = toPush
 
+    -- old save data method, doesn't work
+
     -- local string = getTextFromFile('achievements/save-data.txt')
     -- local array = split(string, '\n')
     -- save = array
@@ -60,7 +66,7 @@ function onCreate()
     -- debugPrint(isAwardsSong)
 end
 
-function setMod(add)
+function setMod(add) -- very messy, tries to load a nearby mod
     runHaxeCode("var toSet = CoolUtil.coolTextFile(path);")
     runHaxeCode("var i = toSet.indexOf('" .. achieveName .. "|1') + " .. add .. ";")
     runHaxeCode("if(toSet[i] == null) i -= " .. add + 1 .. ";")
@@ -83,7 +89,7 @@ function setMod(add)
     end
 end
 
-function onCreatePost()
+function onCreatePost() -- all the menu.
     if (isAwardsSong) then
         -- unlockAchievement('steps', true)
         callOnLuas('unlockAchievement', {"steps", false}) -- GLOBAL YAYAYAYAYYAYAAYAYAYAYAYAYAYAYAYA
@@ -162,7 +168,7 @@ function onCreatePost()
     end
 end
 
-function onUpdate()
+function onUpdate() -- also the menu
     if (isAwardsSong) then
         setProperty('cursor.x', getProperty('ach' .. selected .. '.x') - 140)
         setProperty('cursor.y', getProperty('ach' .. selected .. '.y') - 35)
@@ -190,7 +196,7 @@ function onUpdate()
     end
 end
 
-function unlockAchievement(tag, mod, force)
+function unlockAchievement(tag, mod, force) -- backend, call this in other songs
     if (not botPlay) then
         local _force = force
         if (_force == nil) then

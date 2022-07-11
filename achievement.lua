@@ -1,3 +1,5 @@
+-- This is a template for unlocking achievements after songs. Note that only 1 achievement will be unlocked this way.
+
 local allowEnd = false
 
 function onEndSong()
