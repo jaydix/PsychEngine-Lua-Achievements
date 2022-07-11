@@ -1,3 +1,5 @@
+**PSYCH ENGINE 0.6.1+ REQUIRED!!**
+
 # hi what is this
 psych engine lua achievements: what the devs could never do
 
