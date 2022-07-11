@@ -4,7 +4,7 @@
 psych engine lua achievements: what the devs could never do
 
 ## how add achievement1!?1?1?1?1?1?1!!!?1?1?!1!?
-in your mod's folder, make a folder called achievements
+in your mod's folder (so PsychEngine/mods/Your Mod), make a folder called achievements
 
 then make a file called `achievements.txt`
 
