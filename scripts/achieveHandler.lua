@@ -18,7 +18,7 @@ local isAwardsSong = false
 function onCreate() -- initalization
     achieveName = getPropertyFromClass('Paths', 'currentModDirectory')
     -- achieveName = 'awards'
-    if (songName:lower() == 'awards') and (achieveName == 'awards') or (achieveName == '') then -- for the menu stuff
+    if (songName:lower() == 'awards') and (achieveName == 'awards') then -- for the menu stuff
         isAwardsSong = true
     end
     -- debugPrint(isAwardsSong)
